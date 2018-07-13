@@ -1,0 +1,45 @@
+701569707,Diane,Pozefsky,admin
+720006849,Nicholas,Abashian,admin
+720008487,James,Ding,ugrad
+720168010,Ibrahim,Hawari,admin
+720193874,Cenk,Baykal,admin
+720007178,Jordan,Reese,admin
+720003754,Eric,Jones,admin
+720194698,Percival,Guevarra,admin
+704271500,Kimberly Town,Abels,admin
+703945046,Vicki,Behrens,admin
+713374074,Gigi,Taylor,admin
+720350421,Billie,Karel,grad
+713779783,Chris,Wells,grad
+713884362,Ken,Reddix,grad
+720366571,Manny,Hignutt,grad
+720246286,Bryanne,Young,grad
+720333823,Keadija Chanelle,Wiley,grad
+712427814,Sarah,Miller Esposito,grad
+713778324,Claire,Novotny,grad
+715037667,Joshua,Busman,grad
+703270030,Gale,Greenlee,grad
+711582983,Russell,Bither-Terry,grad
+720219740,Alexandra,Wellington,grad
+714581495,Kari,Samuel,grad
+714408297,Svet,Derderyan,grad
+714356095,Joshua,Lynn,grad
+720193667,Alex,Funt,grad
+720080460,Keren,Dalyot,grad
+720366168,Elise Siena,Duskin,grad
+720029451,Macklyn,Golden,grad
+720161057,Ellen,Turner,grad
+720050287,Danbi,Yi,ugrad
+720360006,Alice Haiyu,Huang,ugrad
+720044010,Mandy,Eidson,ugrad
+720328470,Kristen Marie,Steele,ugrad
+720055023,Jessica,Kincaid,ugrad
+720131322,Glenn,Lippig,ugrad
+720360963,Eva Elise,ZarZar,ugrad
+720057834,Katie,Jansen,ugrad
+720098569,Anna,Cantwell,ugrad
+714953739,Katie Elizabeth,Moylan,ugrad
+720026979,James,Butler,ugrad
+720008212,Abby,Dennison,ugrad
+720051882,Libby,Greenberg,ugrad
+715159509,Savannah,Copeland,ugrad
