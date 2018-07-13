@@ -1,0 +1,170 @@
+table {
+	margin: 0 auto;
+	width: 100%;
+}
+
+tr:first-child {
+	font-weight: bold;
+}
+
+th, td {
+	padding: 5px;
+	text-align: center;
+	outline: solid #1C1C1C 1px;
+}
+
+.busy {
+	background-color: black;
+	color:white;
+}
+.prefer_no {
+	background-color: red;
+}
+.can {
+	background-color: yellow;
+}
+.perfect {
+	background-color: green;
+	color:white;
+}
+table tbody td.na {
+	background-color: #CCCCCC
+}
+
+.closed {
+	background-color: black;
+}
+
+#admin_div, #request_div, #edit_student_div, #view_schedule_div {
+	width: 50%;
+	margin: auto;
+	overflow: auto;
+	border: thin solid black;
+}
+
+#success {
+	background-color: #7CDE88;
+	font-size: 150%;
+	text-align: center;
+}
+
+#failure {
+	background-color: #FF5252;
+	font-size: 150%;
+	text-align: center;
+}
+
+#add_employee, #select_employee {
+	border: thin solid black;
+	padding: .5%;
+	width: 48.5%;
+	height: 200px;
+	float: left;
+}
+
+#edit_employee {
+	border: thin solid black;
+	padding: 1%;
+	width: 97%;
+	clear: left;
+}
+
+.login {
+	float: right;
+	background-color: yellow;
+}
+
+.invalid {
+	border: solid;
+	border-color: red;
+	border-width: 3px;
+}
+
+.error_span {
+	color: red;
+}
+
+#edit_employee_form {
+	border: thin solid black;
+}
+
+.class_1 {
+	background-color: #9EA1FF;
+}
+
+.class_2 {
+	background-color: #97D984;
+}
+
+#tutor_select, #tutor_container, #tutor_requests, #tutor_schedule {
+	float: left;
+	border: thin solid black;
+}
+
+#tutor_select {
+	width: 150px;
+}
+
+#tutor_comments {
+	padding: 5px;
+	width: 1120px;
+}
+
+span.nav:hover {
+	background: #97D984;
+}
+
+span.selected_span {
+	background: #97D984;
+}
+
+span.sasb {
+	color: blue;
+}
+span.greenlaw {
+	color: green;
+}
+
+img {
+	border: thin solid black;
+}
+
+#algorithm-control {
+	margin-top: 5px;
+	display: none;
+}
+
+#schedules {
+	margin: 5px;
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#schedules li a {
+	cursor: pointer;
+	margin-right: 0;
+}
+
+#schedules li {
+	border-bottom: 1px solid #56A0D3;
+}
+
+#schedules li.active a {
+	background: #56A0D3;
+	color: white;
+}
+
+#schedules li.last-item {
+	border-bottom: 0;
+}
+
+#view_schedule_div table tr td p:nth-child(even) {
+	color: #257E78;
+}
+
+#view_schedule_div table tr td p:nth-child(odd) {
+	color: #6C2D58;
+}
