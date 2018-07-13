@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+	WRITTEN BY: Eric Jones
+	LAST EDITED: 12/8/2013
+	LAST EDITED: 10/29/2014 by Ibrahim Hawari
+	
+	This is a pure HTML page that just contains pictures and a text description on how to use the system. Pretty self-explanatory
+-->
+
+<html>
+<head>
+	<title>Admin Help Page</title>
+	<link href="./../bootstrap/css/simple-sidebar.css" rel="stylesheet">
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./../common/stylesheet.css">
+</head>
+<body>
+	<strong>We strongly recommend that all users use the most recent version of Chrome when using this application.  The most recent versions of Firefox and Internet Explorer should
+		also work, but there are known incompatibilities with older versions and some other browsers.</strong>
+		<br>
+		<br>
+		<a href='#setHours'>Set Writing Center Hours</a>
+		<br>
+		<a href='#addEmployees'>Add/Edit/Remove Employees</a>
+		<br>
+		<a href='#setSchedule'>Set Schedules</a>
+		<br>
+		<a href='#viewPrefs'>View All Preferences</a>
+		<br>
+		<a href='#viewMaster'>View Master Schedule</a>
+		<br>
+		<a href='#runAlg'>Run Scheduling Algorithm</a>
+		<br>
+		<br>
+		<h2 id='setHours'>Set Writing Center Hours</h2>
+		<p>
+			This page is used to set the hours that the center is open.  Simply click a cell within the table to toggle the setting for that hour. For instance, the cell pointed to
+			by the yellow arrow below represents the 12:00pm to 1:00pm shift on Friday. Clicking it now would turn it black and set the writing center to 'Closed' for this shift, whereas
+			leaving it white will set the center to 'Open' for this shift.  Changes made on this page <strong>WILL NOT BE SAVED</strong> unless you click 'Submit' before leaving the page.
+			The 'Clear All Hours' button will set clear the form completely so that ever hour is set to 'Open'. The 'Reset' button will reset the form to whatever the hours were when this
+			page was loaded. <strong>Note</strong> that neither of these buttons will make permanent changes, and if you wish to save the changes you still must click 'submit' before leaving
+			the page.
+		</p>
+		<img src='pics/setHours.png' alt='Set Hours Image' width='1000'>
+		<br>
+		<a href=''>Top</a>
+		<br>
+		<br>
+		<br>
+		<h2 id='addEmployees'>Add/Edit/Remove Employees</h2>
+		<p>
+			This page is used to add, edit, and remove employees.  The section to the left of the page is used to add an employee. Note that a new employee may share either a first OR last
+			name with any other employee, but <strong>must</strong> have a unique first name and last name combination, ie you may not have two employees named 'John Smith', though you may have
+			multiple named 'John' and multiple named 'Smith'.  'PID' must be a unique 9 digit integer, and must be the employee's UNC PID associated with the employee's ONYEN.  Once you click
+			'add', the employee will be added to the system if no conflicts are found.  The section to the right of the page is used to edit existing employees. First, select an employee from the
+			dropdown list, and press 'Go'.  Note that you cannot edit your own information. This is to prevent accidentally locking yourself out of the system.
+		</p>
+		<img src='pics/addEmployees1.png' alt='Add Employees Image (1)' width='1000'>
+		<p>
+			Once you click 'Go' for the employee you wish to edit, the lower section will be made visible, as can be seen below.  Here you may edit an employee's first and last name as well as
+			their PID and, if they are a tutor, their status as either 'Graduate' or 'Undergraduate', which affects the number of hours they are assigned by the algorithm.  The same restrictions
+			apply to editing a tutor as to creating one.  For these changes to be saved, you must click 'Submit Information' and wait for the success message to appear at the top of the screen.
+			If you wish to delete the employee you have selected, simply click the 'Delete Employee' button next to the employees name in the lower section.
+		</p>
+		<img src='pics/addEmployees2.png' alt='Add Employees Image (2)' width='1000'>
+		<br>
+		<a href=''>Top</a>
+		<br>
+		<br>
+		<br>
+		<h2 id='setSchedule'>Set Schedules</h2>
+		<strong>There is a known bug on this page. If you begin clicking tutors and editing schedules before the number of people working in each shift has loaded, They will occasionally stall
+			and not print the numbers. To fix this, click on the cells that are not displaying properly and assign a tutor to that shift/remove someone from that shift, or simply reload the page
+			and wait for both the SASB numbers AND the Greenlaw numbers to load before continuing.</strong>
+			<p>
+				This page is used to view the requests for a specific tutor, and to manually edit the schedule for the given tutor as well as to view comments that the tutor may have submitted.
+				When the page loads, you will be presented with the view seen below.  A complete list of all tutors is visible down the left side of the page, and a table is just to the right of that.
+				Each cell represents a one hour shift for which the center is open. Shifts during which the center is closed are grayed out.  The blue number, marked by the blue arrow below, represents
+				the number of people that are currently scheduled to work in SASB during that shift. The green number, marked by the green arrow, is the number of tutors currently scheduled to work
+				in Greenlaw during that shift.  If you hover your mouse over the numbers in a cell, a small box will pop up that gives a full list of the tutors working in each location, as can be
+				seen below.
+			</p>
+			<img src='pics/setSchedule1.png' alt='Set Schedules Image (1)' width='1000'>
+			<p>
+				Once you click on a tutor in the left section to start editing them, a view similar to the one below appears.  The table to the left contains the requests submitted by the tutor.  Here,
+				Black means 'Busy' and the tutor has indicated they cannot possibly work this shift.  Red indicates 'Prefer Not', indicating that a tutor <em>could</em> work at this time, but would
+				strongly prefer to not be scheduled during this shift if possible. Yellow means 'Can Work', indicating that the tutor can easily work at this time and be OK, but that it isn't the 
+				<em>ideal</em> time.  Green signifies 'Perfect', indicating that the tutor would like to have a shift at this time.  Above this table is the tutors name and status (Undergraduate or Graduate).  The right table contains that selected tutor's current schedule. This table is
+				the same as above, except now certain shifts will be highlighted.  Shifts highlighted in blue indicate that the tutor is scheduled to work in SASB during this shift.  Cells highlighted
+				in green indicate the tutor is scheduled to work in Greenlaw during this shift. By clicking the scheduling option radio buttons, highlighted in yellow below, you can change the
+				active tutor's schedule.  Simply select the option you wish to apply and click on a cell in the table. The cell will change color to indicate the tutor's new schedule and the 
+				database will update automatically. The section below both tables, highlighted in red below, contains the total number of hours the tutor is working and any comments the tutor
+				may have submitted when they sent in their requests.  Neither of these are updated unless you reload the tutor by clicking their name in the left section again.
+			</p>
+			<img src='pics/setSchedule2.png' alt='Set Schedules Image (2)' width='1000'>
+			<br>
+			<a href=''>Top</a>
+			<br>
+			<br>
+			<br>
+			<h2 id='viewPrefs'>View All Preferences</h2>
+			<p>
+				This page is used to view all of the requests submitted by the tutors.  It contains a large table full of text.  Each cell contains every tutor that has indicated they are not busy
+				during that shift, where 1 indicates 'Prefer Not' as above, 2 indicates 'Can Work', and 3 indicates 'Perfect'.  This page may be useful for determing the best time to schedule the
+				meetings, as you can quickly see how many people have indicated they are available at each shift.
+			</p>
+			<a href=''>Top</a>
+			<br>
+			<br>
+			<br>
+			<h2 id='viewMaster'>View Master Schedule</h2>
+			<p>
+				This page is used to view the schedule as it currently stands.  It shows every shift in a table, and each shift contains all the tutors that are scheduled during that shift. The tutor
+				name will be followed by either 'GLAW' or 'SASB', which indicates which location the tutor is scheduled for.  This page may be useful to get a quick overview of the entier schedule,
+				or to print a hard copy of the schedule as it stands.
+			</p>
+			<a href=''>Top</a>
+			<br>
+			<br>
+			<br>
+			<h2 id='runAlg'>Run Scheduling Algorithm</h2>
+			<p>
+				This page is used to run the scheduling algorithm.  This button will confirm that you are certain that you wish to proceed before running, because running the algorithm will completely
+				overwrite every tutor's assigned hours.  <strong>YOU MUST WAIT</strong> for the algorithm page to fully load before you click away.  The page loading <em>is</em> the algorithm running,
+				so clicking away prematurely may result in an error in the system.  Once the page has loaded text will appear indicating the algorithm has terminated and you may leave the page.
+				It is quite likely that the algorithm will not result in a perfect schedule that complies with all of the restraints, so you will want to check each tutor's schedule under the
+				'Set Schedules' page to ensure you are happy with each tutor's assigned hours.
+			</p>
+			<a href=''>Top</a>
+			<br>
+			<br>
+			<br>
+		</body>
+		</html>
