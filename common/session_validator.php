@@ -7,8 +7,12 @@ error_log("test", 0);
 	if so it adds more time to the cookie and returns, else it loops them back to the login page and exits the script so nothing can be changed at all. It is called at the top of every
 	page.
 */
-
-	$con=mysqli_connect("127.7.132.2","adminBsuSUg4","MPmBwRCaX5h2","tutorScheduler");
+	$dbhost = getenv("MYSQL_SERVICE_HOST");
+	$dbport = getenv("MYSQL_SERVICE_PORT");
+	$dbuser = getenv("databaseuser");
+	$dbpwd = getenv("databasepassword");
+	$dbname = getenv("databasename");
+	$con = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 
 	$validation_url = "http://$_SERVER[HTTP_HOST]/common/onyen_validator.php";
 
