@@ -1,6 +1,14 @@
 <?php
 // Create connection on Openshift machine
-$con=mysqli_connect("127.0.0.1","userERA","5THnhIwCoyCMtuA0");
+//$con=mysqli_connect("127.0.0.1","userERA","5THnhIwCoyCMtuA0");
+
+$dbhost = getenv("MYSQL_SERVICE_HOST");
+$dbport = getenv("MYSQL_SERVICE_PORT");
+$dbuser = getenv("databaseuser");
+$dbpwd = getenv("databasepassword");
+$dbname = getenv("databasename");
+
+$con = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 
 // Check connection
 if (mysqli_connect_errno($con)){
