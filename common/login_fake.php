@@ -1,5 +1,13 @@
 <?php
-	$con=mysqli_connect("127.0.0.1","userERA","5THnhIwCoyCMtuA0","tutorScheduler");
+
+	$dbhost = getenv("MYSQL_SERVICE_HOST");
+	$dbport = getenv("MYSQL_SERVICE_PORT");
+	$dbuser = getenv("databaseuser");
+	$dbpwd = getenv("databasepassword");
+	$dbname = getenv("databasename");
+	$con = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+
+//	$con=mysqli_connect("127.0.0.1","userERA","5THnhIwCoyCMtuA0","tutorScheduler");
 
 	$result = mysqli_query($con, "SELECT * FROM `employeeInfo`");
 	$admin_url = "http://$_SERVER[HTTP_HOST]/admin/admin.php";
