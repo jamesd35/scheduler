@@ -1,5 +1,5 @@
 <?php
-	$con=mysqli_connect("127.7.132.2","adminBsuSUg4","MPmBwRCaX5h2","tutorScheduler");
+	$con=mysqli_connect("127.7.132.2","userERA","5THnhIwCoyCMtuA0","tutorScheduler");
 
 	$result = mysqli_query($con, "SELECT * FROM `employeeInfo`");
 	$admin_url = "http://$_SERVER[HTTP_HOST]/admin/admin.php";
