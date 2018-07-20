@@ -5,7 +5,7 @@
     This page is the overview on which the user lands if they are an admin.  It simply contains buttons to the various tools available to admins.
 */
 
-    include "./../common/session_validator.php";
+    include "../common/session_validator.php";
     $con = getDatabaseConnection();
 
     $employee_info = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM `employeeInfo` WHERE `PID` = '".mysqli_real_escape_string($con, $_SESSION['pid'])."'"));
