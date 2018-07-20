@@ -16,22 +16,22 @@ if (mysqli_connect_errno($con)){
 }
 
 // Create database
-$sql="create database IF NOT EXISTS tutorScheduler";
-if (mysqli_query($con,$sql)){
-  echo "Database tutorScheduler created successfully <br>";
-}
-else {
-  echo "Error creating database: " . mysqli_error($con) . "<br>";
-}
+//$sql="create database IF NOT EXISTS tutorScheduler";
+//if (mysqli_query($con,$sql)){
+//  echo "Database tutorScheduler created successfully <br>";
+//}
+//else {
+//  echo "Error creating database: " . mysqli_error($con) . "<br>";
+//}
 
 // Set database
-$sql="use tutorScheduler";
-if (mysqli_query($con,$sql)){
-  echo "Database set successfully <br>";
-}
-else {
-  echo "Error setting database: " . mysqli_error($con) . "<br>";
-}
+//$sql="use tutorScheduler";
+//if (mysqli_query($con,$sql)){
+//  echo "Database set successfully <br>";
+//}
+//else {
+//  echo "Error setting database: " . mysqli_error($con) . "<br>";
+//}
 
 // Drop employeeInfo if previously there
 $sql="drop table if exists employeeInfo";
