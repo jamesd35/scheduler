@@ -18,7 +18,7 @@
  */
 
 //Create connection
-include "./session_validator.php";
+include "session_validator.php";
 $con = getDatabaseConnection();
 
 $actual_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
