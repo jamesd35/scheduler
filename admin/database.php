@@ -128,7 +128,7 @@ function loadTutors($group = 'All') {
           } else {
             $tutor = new Tutor($pid, $row['Fname'], $row['Lname'], $row['type']);
           }
-        } else {
+        } else if ($row['type'] == 'grad') {
           $tutor = new Tutor($pid, $row['Fname'], $row['Lname'], $row['type']);
         }
         // Add tutor to the list of tutors.
