@@ -16,8 +16,8 @@
  */
  
 // Create connection
-include "./session_validator.php";
-$con = getDatabaseConnection();
+//include "./session_validator.php";
+//$con = getDatabaseConnection();
 
 $actual_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $validation_url = str_replace("DBShowActual.php", "common/validator.php", $actual_url);
@@ -28,10 +28,10 @@ if (mysqli_connect_errno($con)){
 }
 
 // Set database
-$sql="use tutorScheduler";
-if (!mysqli_query($con,$sql)){
-	echo "Error setting database: " . mysqli_error($con);
-}
+//$sql="use tutorScheduler";
+//if (!mysqli_query($con,$sql)){
+//	echo "Error setting database: " . mysqli_error($con);
+//}
 
 /*********VARIABLES FOR RESTRICTING DISPLAY FROM CUSTOM HOURS*********/
 $days = array(sun,mon,tue,wed,thu,fri,sat); // needed for the openHours table
