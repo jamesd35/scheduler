@@ -7,7 +7,14 @@ error_log("entering onyen_validator.php", 3, "/var/log/php_errors.log");
 	if the pid is listed in the employee database, and if so it starts the session and generates a security cookie for the user before forwarding them to the appropriate landing page.
 */
 
-	$con=mysqli_connect("127.7.132.2","adminBsuSUg4","MPmBwRCaX5h2","tutorScheduler");
+
+	$dbhost = getenv("MYSQL_SERVICE_HOST");
+	$dbport = getenv("MYSQL_SERVICE_PORT");
+	$dbuser = getenv("databaseuser");
+	$dbpwd = getenv("databasepassword");
+	$dbname = getenv("databasename");
+	$con = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+	//$con=mysqli_connect("127.7.132.2","adminBsuSUg4","MPmBwRCaX5h2","tutorScheduler");
 ?>
 
 
@@ -26,8 +33,8 @@ error_log("entering onyen_validator.php", 3, "/var/log/php_errors.log");
 	
 	
 	//This will be a link to the validation text file provided by the authenticator.
-	$vfyvalidate = "https://onyen.unc.edu/cgi-bin/unc_id/authenticator.pl/" . $_POST['vfykey'];
-
+	//$vfyvalidate = "https://onyen.unc.edu/cgi-bin/unc_id/authenticator.pl/" . $_POST['vfykey'];
+	/*
 	$file = file_get_contents($vfyvalidate);
 	$vfypid = 1;
 	
@@ -37,9 +44,10 @@ error_log("entering onyen_validator.php", 3, "/var/log/php_errors.log");
 			$vfypid = substr($data, 5, 9);
 		}
 	}
-	
-	if($vfypid == $_POST['pid']) {	//meaning the validation file matches the PID given by post, thus the login is valid
-		$result = mysqli_query($con, "SELECT * FROM employeeInfo WHERE `PID` = ".mysqli_real_escape_string($con, $_POST['pid']));
+	*/
+//	if($vfypid == $_POST['pid']) {	//meaning the validation file matches the PID given by post, thus the login is valid
+		//$result = mysqli_query($con, "SELECT * FROM employeeInfo WHERE `PID` = ".mysqli_real_escape_string($con, $_POST['pid']));
+		$result = mysqli_query($con, "SELECT * FROM employeeInfo WHERE `PID` = 701569707");
 		if($result) {
 			$employee_info = mysqli_fetch_array($result);
 		}
@@ -48,7 +56,8 @@ error_log("entering onyen_validator.php", 3, "/var/log/php_errors.log");
 			session_start();
 			
 			//generate an authorization cookie and setup the session data
-			$_SESSION['pid'] = $vfypid;
+			//$_SESSION['pid'] = $vfypid;
+			$_SESSION['pid'] = 701569707;
 			$_SESSION['authsalt'] = substr(md5(rand()), 0, 32);
 			$_SESSION['remote_address'] = $_SERVER['REMOTE_ADDR'];
 			
@@ -63,13 +72,14 @@ error_log("entering onyen_validator.php", 3, "/var/log/php_errors.log");
 			//meaning they aren't listed in the info database, and we'll redirect them back to login
 			echo "<span id = 'form_target' hidden>no match</span>\n";
 		}
+	/*
 	}else {
 		//else the pid they posted didn't match the pid from unc, so it's a bunk attempt. Possibly expired.
 		
 		echo "<span id = 'form_target' hidden>illegal attempt</span>\n";
 
 	}
-
+*/
 ?>
 
 </form>
