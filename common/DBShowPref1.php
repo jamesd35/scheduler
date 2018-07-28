@@ -13,8 +13,8 @@
  */
 
 //Create connection
-include "./session_validator.php";
-$con = getDatabaseConnection();
+//include "./session_validator.php";
+//$con = getDatabaseConnection();
 
 $actual_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $validation_url = str_replace("DBShowPref.php", "common/validator.php", $actual_url);
@@ -25,7 +25,7 @@ if (mysqli_connect_errno($con)){
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-// Set database
+/* Set database
 $sql="use tutorScheduler";
 if (!mysqli_query($con,$sql)){
 	echo "Error setting database: " . mysqli_error($con);
