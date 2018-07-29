@@ -126,10 +126,10 @@ function loadTutors($group = 'All') {
             $tutor = new Tutor($pid, $row['Fname'], $row['Lname'], $row['type'],
                     $rowTwo['minHours'], $rowTwo['maxHours'], $rowTwo['idealHours']);
           } else {
-            $tutor = new Tutor($pid, $row['Fname'], $row['Lname'], $row['type']);
+            $tutor = new Tutor($pid, $row['Fname'], $row['Lname'], $row['type'], 0, 0, 0);
           }
         } else if ($row['type'] == 'grad') {
-          $tutor = new Tutor($pid, $row['Fname'], $row['Lname'], $row['type']);
+          $tutor = new Tutor($pid, $row['Fname'], $row['Lname'], $row['type'], 0, 0, 0);
         }
         // Add tutor to the list of tutors.
         $tutors[$pid] = $tutor;
